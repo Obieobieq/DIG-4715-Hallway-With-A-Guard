@@ -208,6 +208,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &19046660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19046654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21736d7ca4743b443a95918952b1b3bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &408413379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1082,6 +1094,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chef
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 17c281d5cea3c9c4aad70d9a2dd2b06f, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1098,6 +1114,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 17c281d5cea3c9c4aad70d9a2dd2b06f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 19046655}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 17c281d5cea3c9c4aad70d9a2dd2b06f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 19046660}
   m_SourcePrefab: {fileID: 100100000, guid: 17c281d5cea3c9c4aad70d9a2dd2b06f, type: 3}
 --- !u!1001 &1306913442
 PrefabInstance:

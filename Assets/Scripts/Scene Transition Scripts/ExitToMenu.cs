@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainToLevel : MonoBehaviour
+public class ExitToMenu : MonoBehaviour
 {
     void Awake()
     {
-        SceneManager.LoadScene("Level");
+        SceneManager.LoadScene("Menu");
     }
 }
