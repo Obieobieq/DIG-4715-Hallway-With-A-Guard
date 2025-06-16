@@ -7,7 +7,6 @@ public class CameraController : MonoBehaviour
     public Camera playerCamera;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 180.0f;
-    public float lookYLimit = 180.0f;
     float rotationX = 0;
     float rotationY = 0;
 
@@ -23,10 +22,8 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-        rotationY += Input.GetAxis("Mouse X") * lookSpeed;
+        
         rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-        rotationY = Mathf.Clamp(rotationY, -lookYLimit, lookYLimit);
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, rotationY, 0);
         transform.rotation *= Quaternion.Euler(Input.GetAxis("Mouse Y") * lookSpeed, Input.GetAxis("Mouse X") * lookSpeed, 0);
 
