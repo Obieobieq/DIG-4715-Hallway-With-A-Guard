@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainToLevel : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class MainToLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            SceneManager.LoadScene("Level");
+        }
+
     }
 }

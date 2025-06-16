@@ -23,12 +23,15 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         
-        rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, rotationY, 0);
-        transform.rotation *= Quaternion.Euler(Input.GetAxis("Mouse Y") * lookSpeed, Input.GetAxis("Mouse X") * lookSpeed, 0);
+            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+            rotationY += Input.GetAxis("Mouse X") * lookSpeed;
+            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, rotationY, 0);
+            transform.rotation *= Quaternion.Euler(Input.GetAxis("Mouse Y") * lookSpeed, Input.GetAxis("Mouse X") * lookSpeed, 0);
 
-        orientation.rotation = Quaternion.Euler(0 , rotationY, 0);
-        
+            orientation.rotation = Quaternion.Euler(0, rotationY, 0);
+
+
     }
 
     // Update is called once per frame
