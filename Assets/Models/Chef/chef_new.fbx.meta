@@ -39,7 +39,7 @@ ModelImporter:
       name: Chef_Anim_Idle
       takeName: Chef Rig|Chef RigAction
       internalID: 1135134301065762757
-      firstFrame: 1
+      firstFrame: 2
       lastFrame: 50
       wrapMode: 0
       orientationOffsetY: 0
@@ -68,8 +68,8 @@ ModelImporter:
       name: Chef_Anim_Walk
       takeName: Chef Rig|Chef RigAction
       internalID: -2290498080184939280
-      firstFrame: 61
-      lastFrame: 80
+      firstFrame: 67
+      lastFrame: 86
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -98,7 +98,7 @@ ModelImporter:
       takeName: Chef Rig|Chef RigAction
       internalID: -6782817132002469983
       firstFrame: 91
-      lastFrame: 106
+      lastFrame: 107
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
