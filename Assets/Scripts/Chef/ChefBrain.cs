@@ -9,6 +9,11 @@ public class ChefBrain : MonoBehaviour
     public Transform[] points;
     public bool canPlayerBeSeen = true;
 
+    public Animator animator;
+
+    public bool seeRat = false;
+    public bool canAttack = false;
+
     void Awake()
     {
         HidingSpot.hidden += RatGone;
