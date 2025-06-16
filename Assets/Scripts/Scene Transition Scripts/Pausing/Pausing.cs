@@ -21,7 +21,6 @@ public class Pausing : MonoBehaviour
                 Pause();
             }
         }
-
     }
 
     public void Resume() 

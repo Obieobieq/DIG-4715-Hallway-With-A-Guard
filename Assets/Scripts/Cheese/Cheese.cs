@@ -22,7 +22,6 @@ public class Cheese : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         float newY = Mathf.Sin(Time.time * speed2) * height + pos.y;
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
 

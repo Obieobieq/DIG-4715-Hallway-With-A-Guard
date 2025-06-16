@@ -6,14 +6,19 @@ public class ChefBrain : MonoBehaviour
     private UnityEngine.AI.NavMeshAgent chef;
 
     private int destPoint = 0;
-    public Transform[] points;
-    public bool canPlayerBeSeen = true;
+
+    [SerializeField]
+    private Transform[] points;
+
+    private bool canPlayerBeSeen = true;
+    private bool fixingChefSpeed = false;
 
     public Animator animator;
 
-    public bool seeRat = false;
-    public bool canAttack = false;
+    [SerializeField]
+    private float boostMultiplier = 2.5f;
 
+    //Initializes events
     void Awake()
     {
         HidingSpot.hidden += RatGone;
@@ -28,7 +33,7 @@ public class ChefBrain : MonoBehaviour
         GotoNextPoint();
     }
 
-    // Update is called once per frame
+    // Has the chef go to the next point when close enough to its current objective
     void Update()
     {
         if (!chef.pathPending && chef.remainingDistance < 0.5f)
@@ -51,17 +56,26 @@ public class ChefBrain : MonoBehaviour
         destPoint = (destPoint + 1) % points.Length;
     }
 
+    //Tells the chef to return to his pathing when the player is hidden
     void RatGone()
     {
         GotoNextPoint();
         canPlayerBeSeen = false;
+        animator.SetBool("seeRat", false);
+        if (fixingChefSpeed == true)
+        {
+            GetComponent<UnityEngine.AI.NavMeshAgent>().speed /= boostMultiplier;
+            fixingChefSpeed = false;
+        }
     }
 
+    //Tells the chef that the player can now be seen
     void PlayerLeft()
     {
         canPlayerBeSeen = true;
     }
 
+    //If player enters FOV, chases player at boostMultiplier speed
     void OnTriggerStay(Collider collider)
     {
         if (canPlayerBeSeen == true)
@@ -69,17 +83,33 @@ public class ChefBrain : MonoBehaviour
             if (collider.gameObject.tag == "Player")
             {
                 chef.SetDestination(collider.transform.position);
+                animator.SetBool("seeRat", true);
+                
+                if (fixingChefSpeed == false)
+                {
+                    GetComponent<UnityEngine.AI.NavMeshAgent>().speed *= boostMultiplier;
+                    fixingChefSpeed = true;
+                }
+                
             }
         }
     }
 
+    // If player is touched, sends player to GameOver screen
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            SceneManager.LoadScene("Lose");
+            animator.SetBool("canAttack", true);
+            Invoke("lost", 2);
+            GetComponent<UnityEngine.AI.NavMeshAgent>().speed /= 2;
         }
+    }
+
+    void lost()
+    {
+        SceneManager.LoadScene("Lose");
     }
 }
