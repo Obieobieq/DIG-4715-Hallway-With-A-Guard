@@ -30,8 +30,6 @@ public class CameraController : MonoBehaviour
             transform.rotation *= Quaternion.Euler(Input.GetAxis("Mouse Y") * lookSpeed, Input.GetAxis("Mouse X") * lookSpeed, 0);
 
             orientation.rotation = Quaternion.Euler(0, rotationY, 0);
-
-
     }
 
     // Update is called once per frame

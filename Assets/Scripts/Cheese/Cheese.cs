@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Cheese : MonoBehaviour
 {
@@ -26,5 +27,15 @@ public class Cheese : MonoBehaviour
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
 
         transform.Rotate(rotation * speed * Time.deltaTime);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadScene("Win");
+        }
     }
 }
