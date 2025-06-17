@@ -104,7 +104,7 @@ public class ChefBrain : MonoBehaviour
             Cursor.visible = true;
             animator.SetBool("canAttack", true);
             Invoke("lost", 2);
-            GetComponent<UnityEngine.AI.NavMeshAgent>().speed /= 2;
+            GetComponent<UnityEngine.AI.NavMeshAgent>().speed /= boostMultiplier;
         }
     }
 
