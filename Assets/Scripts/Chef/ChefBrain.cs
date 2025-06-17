@@ -100,8 +100,6 @@ public class ChefBrain : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
             animator.SetBool("canAttack", true);
             Invoke("lost", 2);
             GetComponent<UnityEngine.AI.NavMeshAgent>().speed /= boostMultiplier;
@@ -111,5 +109,7 @@ public class ChefBrain : MonoBehaviour
     void lost()
     {
         SceneManager.LoadScene("Lose");
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

@@ -15,10 +15,23 @@ public class PlayerController : MonoBehaviour
         controller = gameObject.GetComponent<CharacterController>();
     }
 
-    void Update()
-    {       
+    void FixedUpdate()
+    {
+        frontNBack();
+        leftNRight();        
+    }
+
+    void frontNBack()
+    {
         var forward = transform.TransformDirection(Vector3.forward);
         float curSpeed = speed * Input.GetAxis("Vertical");
         controller.SimpleMove(forward * curSpeed);
+    }
+
+    void leftNRight()
+    {
+        var right = transform.TransformDirection(Vector3.right);
+        float turnSpeed = speed * Input.GetAxis("Horizontal");
+        controller.SimpleMove(right * turnSpeed);
     }
 }
