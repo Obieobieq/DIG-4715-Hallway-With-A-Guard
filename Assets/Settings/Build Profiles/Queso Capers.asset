@@ -23,11 +23,11 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Scenes/Level Scenes/Lose.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/Level Scenes/Level.unity
-  - m_enabled: 1
     m_path: Assets/Scenes/Level Scenes/Menu.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Level Scenes/Win.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/Level Scenes/Level.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings: []
