@@ -16,8 +16,6 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     void Update()
