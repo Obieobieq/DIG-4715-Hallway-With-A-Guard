@@ -283,14 +283,14 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1838326908}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1100, y: 525}
+  m_SizeDelta: {x: 2000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &109746183
 MonoBehaviour:
@@ -605,7 +605,7 @@ RectTransform:
   m_GameObject: {fileID: 826075953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3.5204, y: 3.5204, z: 3.5204}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1012291097}
@@ -613,7 +613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: -80}
+  m_AnchoredPosition: {x: 750, y: -140}
   m_SizeDelta: {x: 80, y: 38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &826075955
@@ -953,7 +953,7 @@ RectTransform:
   m_GameObject: {fileID: 1286246104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3.5204, y: 3.5204, z: 3.5204}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 93928761}
@@ -961,7 +961,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -80}
+  m_AnchoredPosition: {x: 350, y: -140}
   m_SizeDelta: {x: 80, y: 38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1286246106
@@ -1110,7 +1110,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1100, y: 800}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
