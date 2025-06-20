@@ -2,11 +2,24 @@ using UnityEngine;
 
 public class ChefSpawn : MonoBehaviour
 {
-    public GameObject chef;
-
+    public Transform TP;
+    public GameObject Chef;
+    
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Instantiate(chef);
+        
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            
+        }
+    }
+
+
+
 }

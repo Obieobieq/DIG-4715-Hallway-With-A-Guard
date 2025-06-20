@@ -30,6 +30,10 @@ public class ChefBrain : MonoBehaviour
     {
         chef = GetComponent<UnityEngine.AI.NavMeshAgent>();
         chef.autoBraking = false;
+
+
+        Transform[] points = GameObject.FindGameObjectWithTag("Point").transform;
+
         GotoNextPoint();
     }
 

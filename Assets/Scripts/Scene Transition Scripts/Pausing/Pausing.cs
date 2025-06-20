@@ -7,6 +7,12 @@ public class Pausing : MonoBehaviour
 
     public static bool isPaused = false;
 
+    public delegate void Paused();
+    public static event Paused currentlyPaused;
+
+    public delegate void isntPaused();
+    public static event isntPaused notPaused;
+
 
     void Update()
     {
@@ -30,6 +36,7 @@ public class Pausing : MonoBehaviour
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        notPaused.Invoke();
     }
 
     void Pause()
@@ -39,6 +46,7 @@ public class Pausing : MonoBehaviour
         isPaused = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        currentlyPaused.Invoke();
     }
 
     public void ReturnToMenu()
