@@ -16,6 +16,7 @@ public class SceneManagement : MonoBehaviour
         SceneManager.LoadScene("Level");
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
     }
 
     public void QuitGame()
