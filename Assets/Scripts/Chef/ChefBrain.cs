@@ -32,7 +32,6 @@ public class ChefBrain : MonoBehaviour
         chef.autoBraking = false;
 
 
-        Transform[] points = GameObject.FindGameObjectWithTag("Point").transform;
 
         GotoNextPoint();
     }
