@@ -20,24 +20,22 @@ public class CameraController : MonoBehaviour
         Pausing.currentlyPaused += stopLooking;
         Pausing.notPaused += resumeLooking;
         player = GameObject.Find("Player");
-        transform.rotation = orientation.transform.rotation;
     }
 
     void Update()
     {
         if (isPaused == false)
         {
-            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-            rotationY += Input.GetAxis("Mouse X") * lookSpeed;
+            orientation.rotation = Quaternion.Euler(0, rotationY, 0);
+
+            rotationX += (-Input.GetAxis("Mouse Y") * lookSpeed);
+            rotationY += (Input.GetAxis("Mouse X") * lookSpeed);
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, rotationY, 0);
             transform.rotation *= Quaternion.Euler(Input.GetAxis("Mouse Y") * lookSpeed, Input.GetAxis("Mouse X") * lookSpeed, 0);
-
-            orientation.rotation = Quaternion.Euler(0, rotationY, 0);
         }
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z);
